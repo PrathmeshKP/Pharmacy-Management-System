@@ -54,7 +54,7 @@ API Docs: Swagger (Springdoc OpenAPI),Logger
 
 🚀 Setup Instructions
 1️⃣ Clone the Repository
-git clone https://github.com/yourusername/pharmacy-management-system.git
+git clone https://github.com/PrathmeshKP/pharmacy-management-system.git
 cd pharmacy-management-system
 
 2️⃣ Start MySQL
