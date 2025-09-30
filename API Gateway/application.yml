@@ -1,0 +1,141 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    web-application-type: reactive
+
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+
+        # USERS microservice
+        - id: users-service-users
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/users/**
+        - id: users-service-auth
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/auth/**
+        - id: users-swagger-ui
+          uri: http://localhost:8081
+          predicates:
+            - Path=/users/swagger-ui/**
+          filters:
+            - RewritePath=/users/swagger-ui/(?<segment>.*), /swagger-ui/${segment}
+        - id: users-webjars
+          uri: http://localhost:8081
+          predicates:
+            - Path=/users/webjars/**
+          filters:
+            - RewritePath=/users/webjars/(?<segment>.*), /webjars/${segment}
+        - id: users-api-docs
+          uri: http://localhost:8081
+          predicates:
+            - Path=/users/v3/api-docs
+          filters:
+            - RewritePath=/users/v3/api-docs, /v3/api-docs
+
+        # ORDERS microservice
+        - id: orders-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/orders/**
+        - id: orders-swagger-ui
+          uri: http://localhost:8083
+          predicates:
+            - Path=/orders/swagger-ui/**
+          filters:
+            - RewritePath=/orders/swagger-ui/(?<segment>.*), /swagger-ui/${segment}
+        - id: orders-webjars
+          uri: http://localhost:8083
+          predicates:
+            - Path=/orders/webjars/**
+          filters:
+            - RewritePath=/orders/webjars/(?<segment>.*), /webjars/${segment}
+        - id: orders-api-docs
+          uri: http://localhost:8083
+          predicates:
+            - Path=/orders/v3/api-docs
+          filters:
+            - RewritePath=/orders/v3/api-docs, /v3/api-docs
+
+        # MEDICINE microservice
+        - id: medicine-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/medicines/**
+        - id: medicine-swagger-ui
+          uri: http://localhost:8084
+          predicates:
+            - Path=/medicines/swagger-ui/**
+          filters:
+            - RewritePath=/medicines/swagger-ui/(?<segment>.*), /swagger-ui/${segment}
+        - id: medicine-webjars
+          uri: http://localhost:8084
+          predicates:
+            - Path=/medicines/webjars/**
+          filters:
+            - RewritePath=/medicines/webjars/(?<segment>.*), /webjars/${segment}
+        - id: medicine-api-docs
+          uri: http://localhost:8084
+          predicates:
+            - Path=/medicines/v3/api-docs
+          filters:
+            - RewritePath=/medicines/v3/api-docs, /v3/api-docs
+
+        # SUPPLIER-INVENTORY microservice
+        - id: supplier-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/api/suppliers/**
+        - id: inventory-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/api/inventory/**
+        - id: inventory-swagger-ui
+          uri: http://localhost:8085
+          predicates:
+            - Path=/inventory/swagger-ui/**
+          filters:
+            - RewritePath=/inventory/swagger-ui/(?<segment>.*), /swagger-ui/${segment}
+        - id: inventory-webjars
+          uri: http://localhost:8085
+          predicates:
+            - Path=/inventory/webjars/**
+          filters:
+            - RewritePath=/inventory/webjars/(?<segment>.*), /webjars/${segment}
+        - id: inventory-api-docs
+          uri: http://localhost:8085
+          predicates:
+            - Path=/inventory/v3/api-docs
+          filters:
+            - RewritePath=/inventory/v3/api-docs, /v3/api-docs
+
+        # SALES REPORT microservice
+        - id: sales-report-service
+          uri: http://localhost:8086
+          predicates:
+            - Path=/api/sales/**
+        - id: sales-swagger-ui
+          uri: http://localhost:8086
+          predicates:
+            - Path=/sales/swagger-ui/**
+          filters:
+            - RewritePath=/sales/swagger-ui/(?<segment>.*), /swagger-ui/${segment}
+        - id: sales-webjars
+          uri: http://localhost:8086
+          predicates:
+            - Path=/sales/webjars/**
+          filters:
+            - RewritePath=/sales/webjars/(?<segment>.*), /webjars/${segment}
+        - id: sales-api-docs
+          uri: http://localhost:8086
+          predicates:
+            - Path=/sales/v3/api-docs
+          filters:
+            - RewritePath=/sales/v3/api-docs, /v3/api-docs
