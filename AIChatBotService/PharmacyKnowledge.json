@@ -1,0 +1,71 @@
+{
+  "Users Microservice": {
+    "registerUser": {
+      "description": "Register a new user doctor with details like name, email, password, and role.",
+      "role": "admin"
+    },
+    "login": {
+      "description": "Authenticate user and return JWT token.",
+      "role": "doctor,admin"
+    },
+    "getProfile": {
+      "description": "Fetch details of the logged-in user.",
+      "role": "admin"
+    }
+  },
+  "Medicine Microservice": {
+    "addMedicine": {
+      "description": "Add a new medicine with name, type, price, and stock.",
+      "role": "admin"
+    },
+    "searchMedicine": {
+      "description": "Search for medicines by name or category.",
+      "role": "doctor,admin"
+    },
+    "updateStock": {
+      "description": "Update stock after purchase or restocking.",
+      "role": "admin"
+    }
+  },
+  "Order Microservice": {
+    "placeOrder": {
+      "description": "Place an order for medicines.",
+      "role": "doctor"
+    },
+    "getPickUpOrdersOnly": {
+      "description": "Retrievepicked up orders of a user.",
+      "role": "admin"
+    },
+    "verifyOrder": {
+      "description": "it is for verifying that stock is available to pick up.",
+      "role": "admin"
+    }
+  },
+  "Supplier-Inventory Microservice": {
+    "addSupplier": {
+      "description": "Add supplier details.",
+      "role": "admin"
+    },
+    "UpdateSupplier": {
+      "description": "Supplier data update.",
+      "role": "admin"
+    }
+  },
+  "Payment Microservice": {
+    "makePayment": {
+      "description": "Process payment using orderId.",
+      "role": "doctor"
+    },
+    "getPaymentStatus": {
+      "description": "Check status of a payment.",
+      "role": "admin"
+    }
+  },
+  "Sales Report Microservice": {
+    "generateReport": {
+      "description": "Generate sales report.",
+      "role": "admin"
+    }
+    
+  }
+}
