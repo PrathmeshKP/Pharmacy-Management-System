@@ -1,0 +1,119 @@
+/* SignupPage.css */
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+}
+
+.signup-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  overflow: hidden;
+}
+
+.signup-header {
+  padding: 2rem 2rem 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+  color: white;
+}
+
+.signup-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.signup-logo i {
+  font-size: 2rem;
+  margin-right: 0.75rem;
+}
+
+.signup-logo h2 {
+  font-weight: 600;
+}
+
+.signup-header p {
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+.signup-form {
+  padding: 2rem;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.signup-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.signup-button:active {
+  transform: translateY(0);
+}
+
+.signup-button.loading {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.signup-footer {
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--light-gray);
+}
+
+.signup-footer p {
+  margin-bottom: 0.5rem;
+  color: var(--gray);
+}
+
+.signup-footer a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.signup-footer a:hover {
+  color: var(--secondary-dark);
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .signup-page {
+    padding: 1rem;
+  }
+  
+  .signup-container {
+    border-radius: 10px;
+  }
+  
+  .signup-header,
+  .signup-form,
+  .signup-footer {
+    padding: 1.5rem;
+  }
+}

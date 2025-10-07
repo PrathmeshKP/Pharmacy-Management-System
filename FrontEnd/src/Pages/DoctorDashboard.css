@@ -1,0 +1,169 @@
+/* src/pages/DoctorDashboard.css */
+.doctor-dashboard {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.dashboard-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+}
+
+.welcome-card-small {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.welcome-card-small i {
+  font-size: 3rem;
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+.welcome-card-small h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.welcome-card-small p {
+  color: #7f8c8d;
+  margin-bottom: 0;
+}
+
+/* Medicine Toggle Button */
+.medicine-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.medicine-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+}
+
+.medicine-toggle-btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+.medicine-toggle-btn.active {
+  background: #2980b9;
+}
+
+/* Medicine Cards Section */
+.medicine-cards-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.medicine-cards-section h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ecf0f1;
+  text-align: center;
+}
+
+.medicine-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.medicine-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 4px solid #3498db;
+}
+
+.medicine-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.medicine-card-header {
+  margin-bottom: 10px;
+}
+
+.medicine-card-header h4 {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.medicine-card-content {
+  color: #7f8c8d;
+}
+
+.medicine-card-content p {
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.medicine-card-content i {
+  color: #3498db;
+  width: 16px;
+}
+
+.no-results {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 1rem;
+  }
+  
+  .medicine-cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .welcome-card-small {
+    margin: 0 15px;
+    padding: 20px;
+  }
+  
+  .medicine-toggle-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
